@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(3, 37, 62, 0.5);
+            display: flex;
+            justify-content: space-between;
+            justify-content: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        .email{
+            text-decoration: none;
+        }
+        .navitem{
+            padding: 10px 20px;
+        }
+        .navbar img {
+            height: 40px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-align: center;
+            transition: all 0.35s;
+            border-radius: 20px;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: rgba(0, 0, 0, 0.8);
+        }
+        h1{
+            color: rgb(3, 162, 255);
+        }
+        a[href^="mailto:"]{
+            color: black;
+        }
+        @media only screen and (max-width: 800px){
+            .section {
+                height: 120%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 1.5s ease-in-out;
+                background-size: cover;
+                background-position: center;
+                color: black;
+                padding-top: auto;
+            }
+            .visible {
+                opacity: 1;
+            }
+            .AUtext{
+                white-space: pre-line;
+                padding-left: 0%;
+                padding-right: 0%;
+                font-size: 12px;
+            }
+            #home {
+                background-color: rgb(255, 255, 255);
+            }
+            #about {
+                background-image: url(redlogosvg.svg);
+                background-repeat: no-repeat;
+                background-position: 50% 10%;
+                background-size: 10%;
+            }
+            #contact {
+                background-image: url(bluelogosvg.svg);
+                background-repeat: no-repeat;
+                background-position: 50% 25%;
+                background-size: 10%;
+            }
+        }
+        @media only screen and (min-width: 800px){
+            .section {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 1.5s ease-in-out;
+                background-size: cover;
+                background-position: center;
+                color: black;
+                padding-top: auto;
+            }
+            .visible {
+                opacity: 1;
+            }
+            .AUtext{
+                white-space: pre-line;
+                padding-left: 15%;
+                padding-right: 15%;
+                font-size: 14px;
+            }
+            #home {
+                background-color: rgb(255, 255, 255);
+            }
+            #about {
+                background-image: url(redlogosvg.svg);
+                background-repeat: no-repeat;
+                background-position: 5%;
+                background-size: 5%;
+            }
+            #contact {
+                background-image: url(bluelogosvg.svg);
+                background-repeat: no-repeat;
+                background-position: 75%;
+                background-size: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="paritylogo.png" alt="Company Logo">
+        <nav class="navitem">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    <div class="section" id="home">
+        <img src="paritylogo.png" height="250px">
+        <h1 style="font-size:32px;"><b>Parity Capital</b></h1>
+    </div>
+    <div class="section" id="about">
+        <h2 style="font-size:24px;"><u><b>About Us</b></u></h2>
+        <span class="AUtext">Parity Capital’s mission is to bring liquidity to various markets, with a special focus on cryptocurrency. As an algorithmic trading firm, we are dedicated to enhancing market efficiency and ensuring more dynamic participation across the trading landscape.
+            
+            Liquidity is essential for the health and stability of financial markets, and our expertise lies in providing it where it is needed most. By actively trading in markets that are often overlooked or underserved, we help to stabilize prices and reduce volatility in a notoriously unpredictable industry. Our efforts make it easier for participants to buy and sell assets, fostering a more vibrant and accessible trading environment.
+
+            Our team is driven by a passion for innovation and excellence. We develop and implement cutting-edge solutions that swiftly and accurately identify trading opportunities, allowing us to respond quickly to market conditions, and ensuring that we can provide continuous liquidity even in the most challenging environments.
+            
+            At Parity Capital, we believe in the power of technology to transform markets. Our solutions are designed to adapt to the rapidly evolving world of cryptocurrency trading. Through our commitment to technological innovation and strategic insight, we contribute to the creation of fairer, more efficient markets. Our approach is not just about executing trades; it's about making a meaningful impact on the markets we serve. By bringing liquidity to cryptocurrency, we help create a trading ecosystem that is more resilient, transparent, and accessible to all participants.
+        </span>
+    </div>
+    <div class="section" id="contact">
+        <h2><u><b>Contact</b></u></h2>
+        <div>
+            <i class="fa fa-envelope" style="vertical-align: middle" alt=""></i>
+            <span><a class="email" href="mailto:amillerp@umich.edu" style="vertical-align: middle">amillerp@umich.edu
+            </a></span>
+            <span style="white-space: pre-line">
+
+
+
+
+            Copyright © 2024 Parity Capital, LLC
+            </span>
+        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                    else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
